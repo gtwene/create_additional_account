@@ -4,7 +4,7 @@ const ImpressRequest = () => {
   return (
     <div>
       <div className="bg-slate-500 p-6 rounded shadow-xl shadow-slate-900 m-5">
-        <h1 className="text-3xl font-bold text-center block uppercase">
+        <h1 className="text-3xl text-gray-900 font-bold text-center block uppercase">
           Impress Request
         </h1>
       </div>
@@ -12,7 +12,7 @@ const ImpressRequest = () => {
         <div class="container px-5 py-24 mx-auto">
           <div class="flex flex-wrap -m-4 text-center">
             <div class="p-4 lg:m-10 md:m-2 md:w-1/4 sm:w-1/2 w-full">
-              <div class="shadow-2xl shadow-slate-600 border-2 border-gray-600 px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110">
+              <div class="shadow-2xl shadow-slate-600 border-2 border-gray-500 px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110">
                 <svg
                   fill="lightblue"
                   stroke="currentColor"
@@ -32,7 +32,7 @@ const ImpressRequest = () => {
               </div>
             </div>
             <div class="p-4 lg:m-10 md:m-2 md:w-1/4 sm:w-1/2 w-full">
-              <div class="shadow-2xl shadow-slate-600 border-2 border-gray-600 px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110">
+              <div class="shadow-2xl shadow-slate-600 border-2 border-gray-500 px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110">
                 <svg
                   fill="none"
                   stroke="currentColor"
@@ -53,7 +53,7 @@ const ImpressRequest = () => {
               </div>
             </div>
             <div class="p-4 lg:m-10 md:m-2 md:w-1/4 sm:w-1/2 w-full">
-              <div class="shadow-2xl shadow-slate-600 border-2 border-gray-600 px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110">
+              <div class="shadow-2xl shadow-slate-600 border-2 border-gray-500 px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110">
                 <svg
                   fill="none"
                   stroke="currentColor"
