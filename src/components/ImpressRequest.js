@@ -8,7 +8,7 @@ const ImpressRequest = () => {
           Impress Request
         </h1>
       </div>
-      <section class="text-gray-700 body-font m-auto">
+      <section class="-mt-20 text-gray-700 body-font m-auto">
         <div class="container px-5 py-24 mx-auto">
           <div class="flex flex-wrap -m-4 text-center">
             <div class="p-4 lg:m-10 md:m-2 md:w-1/4 sm:w-1/2 w-full">
