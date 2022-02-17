@@ -5,7 +5,7 @@ const Header = () => {
     <div className="relative">
       <div className="absolute -inset-3 bg-gradient-to-r from-slate-900 to-purple-600 mb-11 blur-xl hover:opacity-100 transition duration-1000"></div>
       <div class="relative flex items-center justify-between flex-wrap bg-slate-500 shadow-2xl shadow-current p-6 ">
-        <div class=" cursor-pointer flex items-center flex-shrink-0 text-white mr-6">
+        <div class="ml-5 cursor-pointer flex items-center flex-shrink-0 text-white mr-6">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="0.18889in"
