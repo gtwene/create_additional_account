@@ -1,513 +1,332 @@
 import React from "react";
 
-const Body = () => {
-  return (
-    <div>
-      <div className="bg-slate-500 p-5 pt-2 text-center text-white font-bold text-3xl shadow-xl">
-        <h1>Impress Origination</h1>
+const ImpressOrigination = () => {
+  let btnAdd = document.querySelector("button");
+  let table = document.querySelector("table");
+
+  let CreditAccountInput = document.getElementById("Credit-Account");
+  let BranchInput = document.getElementById("branch");
+  let CurrentBalanceInput = document.getElementById("current-Balance");
+  let ScanDocumentInput = document.getElementById("scan-Document");
+  let NarrationInput = document.getElementById("narration");
+
+  btnAdd.addEventListener("click", () => {
+    let CreditAccount = CreditAccountInput.value;
+    let Branch = BranchInput.value;
+    let CurrentBalance = CurrentBalanceInput.value;
+    let ScanDocument = ScanDocumentInput.value;
+    let Narration = NarrationInput.value;
+
+    let template = `
+      <tr>
+      <td class="p-4 w-4">
+      <div class="flex items-center">
+        <input
+          id="checkbox-search-3"
+          type="checkbox"
+          class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+        />
+        <label
+          for="checkbox-search-3"
+          class="sr-only"
+        ></label>
       </div>
-      <div className=" p-5 m-5">
-        <div className="border-2 border-slate-400 rounded-lg  ">
-          <form class=" p-10 ">
-            {/* Customer */}
-            <div class="flex flex-wrap -mx-3 mb-6">
-              <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                <label
-                  class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                  for="grid-first-name"
-                >
-                  Credit Account
-                </label>
-                <input
-                  class="appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-1 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                  id="grid-first-name"
-                  type="text"
-                  placeholder="PETTY CASH - SLL - HIGH STREET - 111121000003(SLL)"
-                />
-              </div>
-              <div class="w-full md:w-1/2 px-3">
-                <label
-                  class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                  for="grid-last-name"
-                >
-                  Value Date
-                </label>
-                <input
-                  class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-1 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                  id="grid-last-name"
-                  type=""
-                  placeholder={Date()}
-                />
-              </div>
-            </div>
+    </td>
+                    <td>${CreditAccount}</td>
+                    <td>${Branch}</td>
+                    <td>${CurrentBalance}</td>
+                    <td>${ScanDocument}</td>
+                    <td>${Narration}</td>
 
-            {/* Account Name */}
-            {/* <div class="flex flex-wrap -mx-3 mb-6">
-              <div class="w-full px-3">
-                <label
-                  class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                  for="grid-password"
-                >
-                  Account Name
-                </label>
-                <input
-                  class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-1 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                  id="grid-password"
-                  type="password"
-                  placeholder=""
-                />
-              </div>
-            </div> */}
+                </tr>
+            `;
 
-            {/* Branch */}
-            <div class="flex flex-wrap -mx-3 mb-6">
-              <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                <label
-                  class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                  for="grid-first-name"
-                >
-                  Branch
-                </label>
-                <input
-                  class=" block w-full bg-gray-200 text-gray-700 border  rounded py-1 leading-tight focus:outline-none focus:bg-white"
-                  id="grid-first-name"
-                  type="text"
-                  placeholder="001"
-                />
-              </div>
-              <div class="w-full md:w-1/2 px-3">
-                <label
-                  class="invisible block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 "
-                  for="grid-last-name"
-                >
-                  Branch
-                </label>
-                <input
-                  class="block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-1 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                  id="grid-last-name"
-                  type="text"
-                  placeholder="HIGH STREET"
-                />
-              </div>
-            </div>
+    table.innerHTML += template;
+  });
 
-            {/* Product Sub Group */}
-            <div class="flex flex-wrap -mx-3 mb-6">
-              <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                <label
-                  class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                  for="grid-first-name"
-                >
-                  Scan Document
-                </label>
-                <input
-                  class="appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-1 px-4  leading-tight focus:outline-none focus:bg-white"
-                  id="grid-first-name"
-                  type="text"
-                  placeholder=""
-                />
-              </div>
-              <div class="w-full md:w-1/2 px-3">
-                <label
-                  class="invisible block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                  for="grid-last-name"
-                >
-                  Scan Document
-                </label>
-                <button class="block w-full hover:bg-slate-400 hover:text-black bg-slate-900 text-gray-200 border border-gray-200 rounded py-1 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 animate-pulse">
-                  View Doc
-                </button>
-              </div>
-            </div>
+  return (
+    <div className="bg-slate-300">
+      <div class="p-4 w-full text-center  bg-gradient-to-br from-green-400 to-blue-600 rounded-lg shadow-xl sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+        <h3 class="uppercase -mb-4 text-2xl font-bold text-white dark:text-white">
+          Impress Origination
+        </h3>
+      </div>
 
-            {/* Narration */}
-            <div class="flex flex-wrap -mx-3 mb-6">
-              <div class="w-full px-3">
-                <label
-                  class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                  for="grid-password"
-                >
-                  Narration
-                </label>
-                <input
-                  class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-1 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                  id="grid-password"
-                  type="password"
-                  placeholder=""
-                />
-              </div>
-            </div>
+      <div className="m-5 flex space-x-2">
+        <div class=" w-full bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+          <div class="pb-5 relative z-0 mb-6 w-full group">
+            <input
+              type="email"
+              name="floating_email"
+              class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              placeholder=" "
+              required
+            />
+            <label
+              for="floating_email"
+              class=" absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            >
+              Credit Account
+            </label>
+          </div>
+          <div class=" relative z-0 mb-6 w-full group">
+            <input
+              type="Date"
+              name="floating_password"
+              id="Credit-Account"
+              class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              placeholder=" "
+              required
+            />
+            <label
+              for="floating_password"
+              class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            >
+              Date Value
+            </label>
+          </div>
+          <div class="relative z-0 mb-6 w-full group">
+            <input
+              type="Country"
+              id="branch"
+              name="floating_email"
+              class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              placeholder=" "
+              required
+            />
+            <label
+              for="floating_email"
+              class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            >
+              Branch
+            </label>
+          </div>
+        </div>
+        <div class="p-4 w-full bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+          <div class="pb-5 relative z-0 mb-6 w-full group">
+            <input
+              type="number"
+              id="current-Balance"
+              name="floating_email"
+              class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              placeholder=" "
+              required
+            />
+            <label
+              for="floating_email"
+              class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            >
+              Current Balance
+            </label>
+          </div>
+          <div class=" relative z-0 mb-6 w-full group">
+            <input
+              type="file"
+              name="floating_password"
+              id="scan-Document"
+              class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              placeholder=" "
+              required
+            />
+            <label
+              for="floating_password"
+              class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            >
+              Scan Document
+            </label>
+          </div>
+          <div class="relative z-0 mb-6 w-full group">
+            <input
+              type="text"
+              id="narration"
+              name="floating_email"
+              class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              placeholder=" "
+              required
+            />
+            <label
+              for="floating_email"
+              class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            >
+              Narration
+            </label>
+          </div>
+        </div>
+      </div>
 
-            {/* Account Balance */}
-            <div class="flex flex-wrap -mx-3 mb-2">
-              <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-                <label
-                  class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                  for="grid-city"
-                >
-                  Current Balance
-                </label>
-                <div className="flex ">
-                  <input
-                    class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-1 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                    id="grid-zip"
-                    type="text"
-                    placeholder=""
-                  />
-                </div>
-              </div>
-            </div>
-
-            {/* Second Border */}
-            <div className="p-5 mt-10 border-2 border-slate-400 rounded-lg ">
-              {/* Start Of Second Header */}
-              <div class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-800">
-                <div class="container flex flex-wrap justify-between items-center mx-auto">
-                  <a href="#" class="flex">
-                    <button class="border-4 p-1 rounded-lg bg-slate-600 border-blue-900 shadow-lg hover:bg-blue-900 hover:text-white self-center text-lg font-semibold whitespace-nowrap ">
-                      Posted Transactions
-                    </button>
-                  </a>
-
-                  <div
-                    class="hidden w-full md:block md:w-auto"
-                    id="mobile-menu"
+      {/* TAble */}
+      <div class="p-4 w-full  bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+        <div class="bg-white border-gray-200 px-2 sm:px-4 py-5 rounded dark:bg-gray-800">
+          <div class="container flex flex-wrap justify-between items-center mx-auto">
+            <a href="#" class="flex">
+              <button class="border-2 p-1 rounded bg-slate-500 hover:animate-pulse hover:text-white self-center text-lg font-semibold whitespace-nowrap dark:text-whiterelative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:ring-green-200 dark:focus:ring-green-800">
+                <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0s">
+                  Add
+                </span>
+              </button>
+            </a>
+            <div class="flex md:order-2">
+              <div class="hidden relative mr-3 md:mr-0 md:block">
+                <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                  <svg
+                    class="w-5 h-5 text-gray-500"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
-                      <li>
-                        <button
-                          href="#"
-                          class="border-blue-500 shadow-lg hover:bg-blue-900 hover:text-white block border-2 p-5 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-1 dark:text-white"
-                          aria-current="page"
-                        >
-                          Clear
-                        </button>
-                      </li>
-                      <li>
-                        <button
-                          href="#"
-                          class="border-blue-500 shadow-lg hover:bg-blue-900 hover:text-white block border-2 p-5 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-1 dark:text-white"
-                        >
-                          Post
-                        </button>
-                      </li>
-                      <li>
-                        <button class="border-red-500 shadow-lg hover:bg-blue-900 hover:text-white  border-2 p-5  rounded md:bg-transparent md:text-red-500 md:p-1 dark:text-white lg:text-red-500">
-                          Exit
-                        </button>
-                      </li>
-                    </ul>
-                  </div>
+                    <path
+                      fill-rule="evenodd"
+                      d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
                 </div>
+                <input
+                  type="text"
+                  id="email-adress-icon"
+                  class="block p-2 pl-10 w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:text-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  placeholder="Search..."
+                />
               </div>
-              {/* End Of Second Header */}
-
-              <div class="flex flex-col mt-8">
-                <div class="py-2 -my-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
-                  <div class="inline-block min-w-full overflow-hidden align-middle border-b border-gray-200 shadow sm:rounded-lg">
-                    <table class="min-w-full">
-                      <thead>
-                        <tr>
-                          <th class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
-                            Expense Type
-                          </th>
-                          <th class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
-                            Debit Amount
-                          </th>
-                          <th class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
-                            Branch
-                          </th>
-                          <th class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
-                            Scan Document
-                          </th>
-                          <th class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
-                            Narration
-                          </th>
-                          <th class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
-                            Delete
-                          </th>
-                        </tr>
-                      </thead>
-
-                      {/* Entry */}
-
-                      <tbody class="bg-white overflow-hidden">
-                        <tr>
-                          <td class="px-1 py-4 whitespace-no-wrap border-b border-gray-200">
-                            <div class="flex items-center">
-                              <div class="ml-4">
-                                <input
-                                  class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-1 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                                  id="grid-zip"
-                                  type="text"
-                                  placeholder=""
-                                />
-                              </div>
-                            </div>
-                          </td>
-
-                          <td class="px-3 py-4 whitespace-no-wrap border-b border-gray-200">
-                            <input
-                              class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-1 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                              id="grid-zip"
-                              type="text"
-                              placeholder=""
-                            />
-                          </td>
-
-                          <td class="px-3 py-4 whitespace-no-wrap border-b border-gray-200">
-                            <input
-                              class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-1 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                              id="grid-zip"
-                              type="text"
-                              placeholder=""
-                            />
-                          </td>
-
-                          <td class="px-3 py-4 text-sm leading-5 text-gray-500 whitespace-no-wrap border-b border-gray-200">
-                            <input
-                              class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-1 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                              id="grid-zip"
-                              type="text"
-                              placeholder=""
-                            />
-                          </td>
-                          <td class="px-3 py-4 text-sm leading-5 text-gray-500 whitespace-no-wrap border-b border-gray-200">
-                            <input
-                              class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-1 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                              id="grid-zip"
-                              type="text"
-                              placeholder=""
-                            />
-                          </td>
-                          <td class="px-6 py-4 text-sm leading-5 text-gray-500 whitespace-no-wrap border-b border-gray-200">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              class="w-6 h-6 text-red-400"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                              stroke="currentColor"
-                            >
-                              <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
-                              />
-                            </svg>
-                          </td>
-                        </tr>
-
-                        <tr>
-                          <td class="px-1 py-4 whitespace-no-wrap border-b border-gray-200">
-                            <div class="flex items-center">
-                              <div class="ml-4">
-                                <input
-                                  class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-1 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                                  id="grid-zip"
-                                  type="text"
-                                  placeholder=""
-                                />
-                              </div>
-                            </div>
-                          </td>
-
-                          <td class="px-3 py-4 whitespace-no-wrap border-b border-gray-200">
-                            <input
-                              class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-1 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                              id="grid-zip"
-                              type="text"
-                              placeholder=""
-                            />
-                          </td>
-
-                          <td class="px-3 py-4 whitespace-no-wrap border-b border-gray-200">
-                            <input
-                              class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-1 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                              id="grid-zip"
-                              type="text"
-                              placeholder=""
-                            />
-                          </td>
-
-                          <td class="px-3 py-4 text-sm leading-5 text-gray-500 whitespace-no-wrap border-b border-gray-200">
-                            <input
-                              class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-1 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                              id="grid-zip"
-                              type="text"
-                              placeholder=""
-                            />
-                          </td>
-                          <td class="px-3 py-4 text-sm leading-5 text-gray-500 whitespace-no-wrap border-b border-gray-200">
-                            <input
-                              class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-1 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                              id="grid-zip"
-                              type="text"
-                              placeholder=""
-                            />
-                          </td>
-                          <td class="px-6 py-4 text-sm leading-5 text-gray-500 whitespace-no-wrap border-b border-gray-200">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              class="w-6 h-6 text-red-400"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                              stroke="currentColor"
-                            >
-                              <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
-                              />
-                            </svg>
-                          </td>
-                        </tr>
-
-                        <tr>
-                          <td class="px-1 py-4 whitespace-no-wrap border-b border-gray-200">
-                            <div class="flex items-center">
-                              <div class="ml-4">
-                                <input
-                                  class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-1 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                                  id="grid-zip"
-                                  type="text"
-                                  placeholder=""
-                                />
-                              </div>
-                            </div>
-                          </td>
-
-                          <td class="px-3 py-4 whitespace-no-wrap border-b border-gray-200">
-                            <input
-                              class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-1 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                              id="grid-zip"
-                              type="text"
-                              placeholder=""
-                            />
-                          </td>
-
-                          <td class="px-3 py-4 whitespace-no-wrap border-b border-gray-200">
-                            <input
-                              class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-1 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                              id="grid-zip"
-                              type="text"
-                              placeholder=""
-                            />
-                          </td>
-
-                          <td class="px-3 py-4 text-sm leading-5 text-gray-500 whitespace-no-wrap border-b border-gray-200">
-                            <input
-                              class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-1 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                              id="grid-zip"
-                              type="text"
-                              placeholder=""
-                            />
-                          </td>
-                          <td class="px-3 py-4 text-sm leading-5 text-gray-500 whitespace-no-wrap border-b border-gray-200">
-                            <input
-                              class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-1 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                              id="grid-zip"
-                              type="text"
-                              placeholder=""
-                            />
-                          </td>
-                          <td class="px-6 py-4 text-sm leading-5 text-gray-500 whitespace-no-wrap border-b border-gray-200">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              class="w-6 h-6 text-red-400"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                              stroke="currentColor"
-                            >
-                              <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
-                              />
-                            </svg>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-              <div class="w-full md:w-1/3 px-3 mt-5 mb-6 md:mb-0">
-                <label
-                  class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                  for="grid-city"
+              <button
+                data-collapse-toggle="mobile-menu-3"
+                type="button"
+                class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                aria-controls="mobile-menu-3"
+                aria-expanded="false"
+              >
+                <svg
+                  class="hidden w-6 h-6"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  Total
-                </label>
-                <div className="flex ">
-                  <input
-                    class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-1 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                    id="grid-zip"
-                    type="text"
-                    placeholder=""
-                  />
-                </div>
-              </div>
+                  <path
+                    fill-rule="evenodd"
+                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <div
+              class="hidden justify-between items-center w-full md:flex md:w-auto md:order-1"
+              id="mobile-menu-3"
+            >
+              <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
+                <li>
+                  <button class="text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                    Post
+                  </button>
+                </li>
+                <li>
+                  <button class="text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                    Clear
+                  </button>
+                </li>
+                <li>
+                  <button class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                    Exit
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        {/* End Table */}
 
-              <div className="p-5 mt-10 border-2 border-slate-400 rounded-lg ">
-                <div class="flex flex-wrap -mx-3 mb-2">
-                  <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-                    <label
-                      class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                      for="grid-city"
-                    >
-                      Account Name
-                    </label>
-                    <div className="flex ">
-                      <input
-                        class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-1 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                        id="grid-zip"
-                        type="text"
-                        placeholder=""
-                      />
-                    </div>
-                  </div>
-
-                  <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-                    <label
-                      class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                      for="grid-zip"
-                    >
-                      Chart Group
-                    </label>
-                    <div className="flex ">
-                      <input
-                        class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-1 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                        id="grid-zip"
-                        type="text"
-                        placeholder=""
-                      />
-                    </div>
-                  </div>
-                  <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-                    <label
-                      class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                      for="grid-zip"
-                    >
-                      Current Balance
-                    </label>
-                    <input
-                      class=" block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-1 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                      id="grid-zip"
-                      type="text"
-                      placeholder=""
-                    />
-                  </div>
-                </div>
+        {/* Table Start */}
+        <div class="flex flex-col">
+          <div class="overflow-x-auto shadow-md sm:rounded-lg">
+            <div class="inline-block min-w-full align-middle dark:bg-gray-800">
+              <div class=" overflow-hidden">
+                <table class=" min-w-full divide-y divide-gray-200 table-fixed dark:divide-gray-700">
+                  <thead class="bg-gray-100 dark:bg-gray-700">
+                    <tr>
+                      <th scope="col" class="p-4"></th>
+                      <th
+                        scope="col"
+                        class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400"
+                      >
+                        Expense Type
+                      </th>
+                      <th
+                        scope="col"
+                        class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400"
+                      >
+                        Debit Amount
+                      </th>
+                      <th
+                        scope="col"
+                        class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400"
+                      >
+                        Branch
+                      </th>
+                      <th
+                        scope="col"
+                        class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400"
+                      >
+                        Scan Document
+                      </th>
+                      <th
+                        scope="col"
+                        class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400"
+                      >
+                        Narration
+                      </th>
+                      <th scope="col" class="p-4">
+                        <span class="sr-only">Edit</span>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody class="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
+                    <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+                      <td class="p-4 w-4">
+                        <div class="flex items-center">
+                          <input
+                            id="checkbox-search-3"
+                            type="checkbox"
+                            class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                          />
+                          <label
+                            for="checkbox-search-3"
+                            class="sr-only"
+                          ></label>
+                        </div>
+                      </td>
+                      <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        Credit Account
+                      </td>
+                      <td class="py-4 px-6 text-sm font-medium text-gray-500 whitespace-nowrap dark:text-white">
+                        Ghs 999
+                      </td>
+                      <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        Kasoa
+                      </td>
+                      <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        Document to be scan
+                      </td>
+                      <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        Document to be scan
+                      </td>
+                      <td class="py-4 px-6 text-sm font-medium text-right whitespace-nowrap">
+                        <a
+                          href="#"
+                          class="text-blue-600 dark:text-blue-500 hover:underline"
+                        >
+                          Edit
+                        </a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
-          </form>
+          </div>
         </div>
       </div>
     </div>
   );
 };
 
-export default Body;
+export default ImpressOrigination;
