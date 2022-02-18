@@ -3,6 +3,9 @@ import React from "react";
 const Body = () => {
   return (
     <div>
+      <div className="bg-slate-500 p-5 pt-2 text-center text-white font-bold text-3xl shadow-xl">
+        <h1>Impress Origination</h1>
+      </div>
       <div className=" p-5 m-5">
         <div className="border-2 border-slate-400 rounded-lg  ">
           <form class=" p-10 ">
@@ -157,6 +160,48 @@ const Body = () => {
 
             {/* Second Border */}
             <div className="p-5 mt-10 border-2 border-slate-400 rounded-lg ">
+              {/* Start Of Second Header */}
+              <div class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-800">
+                <div class="container flex flex-wrap justify-between items-center mx-auto">
+                  <a href="#" class="flex">
+                    <button class="border-4 p-1 rounded-lg bg-slate-600 border-blue-900 shadow-lg hover:bg-blue-900 hover:text-white self-center text-lg font-semibold whitespace-nowrap ">
+                      Posted Transactions
+                    </button>
+                  </a>
+
+                  <div
+                    class="hidden w-full md:block md:w-auto"
+                    id="mobile-menu"
+                  >
+                    <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
+                      <li>
+                        <button
+                          href="#"
+                          class="border-blue-500 shadow-lg hover:bg-blue-900 hover:text-white block border-2 p-5 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-1 dark:text-white"
+                          aria-current="page"
+                        >
+                          Clear
+                        </button>
+                      </li>
+                      <li>
+                        <button
+                          href="#"
+                          class="border-blue-500 shadow-lg hover:bg-blue-900 hover:text-white block border-2 p-5 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-1 dark:text-white"
+                        >
+                          Post
+                        </button>
+                      </li>
+                      <li>
+                        <button class="border-red-500 shadow-lg hover:bg-blue-900 hover:text-white  border-2 p-5  rounded md:bg-transparent md:text-red-500 md:p-1 dark:text-white lg:text-red-500">
+                          Exit
+                        </button>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              {/* End Of Second Header */}
+
               <div class="flex flex-col mt-8">
                 <div class="py-2 -my-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
                   <div class="inline-block min-w-full overflow-hidden align-middle border-b border-gray-200 shadow sm:rounded-lg">
@@ -386,6 +431,74 @@ const Body = () => {
                         </tr>
                       </tbody>
                     </table>
+                  </div>
+                </div>
+              </div>
+              <div class="w-full md:w-1/3 px-3 mt-5 mb-6 md:mb-0">
+                <label
+                  class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                  for="grid-city"
+                >
+                  Total
+                </label>
+                <div className="flex ">
+                  <input
+                    class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-1 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                    id="grid-zip"
+                    type="text"
+                    placeholder=""
+                  />
+                </div>
+              </div>
+
+              <div className="p-5 mt-10 border-2 border-slate-400 rounded-lg ">
+                <div class="flex flex-wrap -mx-3 mb-2">
+                  <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+                    <label
+                      class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                      for="grid-city"
+                    >
+                      Account Name
+                    </label>
+                    <div className="flex ">
+                      <input
+                        class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-1 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                        id="grid-zip"
+                        type="text"
+                        placeholder=""
+                      />
+                    </div>
+                  </div>
+
+                  <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+                    <label
+                      class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                      for="grid-zip"
+                    >
+                      Chart Group
+                    </label>
+                    <div className="flex ">
+                      <input
+                        class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-1 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                        id="grid-zip"
+                        type="text"
+                        placeholder=""
+                      />
+                    </div>
+                  </div>
+                  <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+                    <label
+                      class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                      for="grid-zip"
+                    >
+                      Current Balance
+                    </label>
+                    <input
+                      class=" block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-1 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                      id="grid-zip"
+                      type="text"
+                      placeholder=""
+                    />
                   </div>
                 </div>
               </div>
