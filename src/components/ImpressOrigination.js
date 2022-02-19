@@ -12,39 +12,39 @@ const ImpressOrigination = () => {
   let ScanDocumentInput = document.getElementById("scan-Document");
   let NarrationInput = document.getElementById("narration");
 
-  btnAdd.addEventListener("click", () => {
-    let CreditAccount = CreditAccountInput.value;
-    let Branch = BranchInput.value;
-    let CurrentBalance = CurrentBalanceInput.value;
-    let ScanDocument = ScanDocumentInput.value;
-    let Narration = NarrationInput.value;
+  //   btnAdd.addEventListener("click", () => {
+  //     let CreditAccount = CreditAccountInput.value;
+  //     let Branch = BranchInput.value;
+  //     let CurrentBalance = CurrentBalanceInput.value;
+  //     let ScanDocument = ScanDocumentInput.value;
+  //     let Narration = NarrationInput.value;
 
-    let template = `
-        <tr>
-        <td class="p-4 w-4">
-        <div class="flex items-center">
-          <input
-            id="checkbox-search-3"
-            type="checkbox"
-            class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-          />
-          <label
-            for="checkbox-search-3"
-            class="sr-only"
-          ></label>
-        </div>
-      </td>
-                      <td>${CreditAccount}</td>
-                      <td>${Branch}</td>
-                      <td>${CurrentBalance}</td>
-                      <td>${ScanDocument}</td>
-                      <td>${Narration}</td>
+  //     let template = `
+  //         <tr>
+  //         <td class="p-4 w-4">
+  //         <div class="flex items-center">
+  //           <input
+  //             id="checkbox-search-3"
+  //             type="checkbox"
+  //             class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+  //           />
+  //           <label
+  //             for="checkbox-search-3"
+  //             class="sr-only"
+  //           ></label>
+  //         </div>
+  //       </td>
+  //                       <td>${CreditAccount}</td>
+  //                       <td>${Branch}</td>
+  //                       <td>${CurrentBalance}</td>
+  //                       <td>${ScanDocument}</td>
+  //                       <td>${Narration}</td>
 
-                  </tr>
-              `;
+  //                   </tr>
+  //               `;
 
-    table.innerHTML += template;
-  });
+  //     table.innerHTML += template;
+  //   });
 
   return (
     <div className="bg-slate-300">
