@@ -1,6 +1,8 @@
 import React from "react";
+import useDarkMode from "../hook/useDarkMode";
 
 const ImpressOrigination = () => {
+  const [colorTheme, setTheme] = useDarkMode();
   let btnAdd = document.querySelector("button");
   let table = document.querySelector("table");
 
@@ -18,28 +20,28 @@ const ImpressOrigination = () => {
     let Narration = NarrationInput.value;
 
     let template = `
-      <tr>
-      <td class="p-4 w-4">
-      <div class="flex items-center">
-        <input
-          id="checkbox-search-3"
-          type="checkbox"
-          class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-        />
-        <label
-          for="checkbox-search-3"
-          class="sr-only"
-        ></label>
-      </div>
-    </td>
-                    <td>${CreditAccount}</td>
-                    <td>${Branch}</td>
-                    <td>${CurrentBalance}</td>
-                    <td>${ScanDocument}</td>
-                    <td>${Narration}</td>
+        <tr>
+        <td class="p-4 w-4">
+        <div class="flex items-center">
+          <input
+            id="checkbox-search-3"
+            type="checkbox"
+            class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+          />
+          <label
+            for="checkbox-search-3"
+            class="sr-only"
+          ></label>
+        </div>
+      </td>
+                      <td>${CreditAccount}</td>
+                      <td>${Branch}</td>
+                      <td>${CurrentBalance}</td>
+                      <td>${ScanDocument}</td>
+                      <td>${Narration}</td>
 
-                </tr>
-            `;
+                  </tr>
+              `;
 
     table.innerHTML += template;
   });
@@ -50,10 +52,49 @@ const ImpressOrigination = () => {
         <h3 class="uppercase -mb-4 text-2xl font-bold text-white dark:text-white">
           Impress Origination
         </h3>
+
+        <div className="fixed top-0 w-full p-5">
+          <span
+            onClick={() => setTheme(colorTheme)}
+            className="w-10 h-10 bg-indigo-500 rounded-full shadow-lg cursor-pointer text-white flex items-center justify-center "
+          >
+            {colorTheme === "light" ? (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+                />
+              </svg>
+            ) : (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+                />
+              </svg>
+            )}
+          </span>
+        </div>
       </div>
 
-      <div className="m-5 flex space-x-2">
-        <div class=" w-full bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+      <div className="m-5 space-x-2 pt-5 flex ">
+        <div class="md:mr-5 w-full bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700">
           <div class="pb-5 relative z-0 mb-6 w-full group">
             <input
               type="email"
@@ -69,7 +110,7 @@ const ImpressOrigination = () => {
               Credit Account
             </label>
           </div>
-          <div class=" relative z-0 mb-6 w-full group">
+          <div class=" relative z-0 mb-6 w-full group dark:text-white">
             <input
               type="Date"
               name="floating_password"
@@ -102,7 +143,7 @@ const ImpressOrigination = () => {
             </label>
           </div>
         </div>
-        <div class="p-4 w-full bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+        <div class="p-4 w-full bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700 ">
           <div class="pb-5 relative z-0 mb-6 w-full group">
             <input
               type="number"
@@ -159,7 +200,7 @@ const ImpressOrigination = () => {
         <div class="bg-white border-gray-200 px-2 sm:px-4 py-5 rounded dark:bg-gray-800">
           <div class="container flex flex-wrap justify-between items-center mx-auto">
             <a href="#" class="flex">
-              <button class="border-2 p-1 rounded bg-slate-500 hover:animate-pulse hover:text-white self-center text-lg font-semibold whitespace-nowrap dark:text-whiterelative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:ring-green-200 dark:focus:ring-green-800">
+              <button class="border-2 p-1 rounded bg-slate-500 hover:animate-pulse self-center text-lg font-semibold whitespace-nowrap dark:text-whiterelative inline-flex items-center justify-center  mb-2 mr-2 overflow-hidden   text-gray-900 group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:ring-green-200 dark:focus:ring-green-800">
                 <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0s">
                   Add
                 </span>
