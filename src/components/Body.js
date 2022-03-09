@@ -16,7 +16,7 @@ const Body = () => {
                   Customer ID
                 </label>
                 <input
-                  class="appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-1 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                  class=" block w-full bg-gray-200 text-gray-700 border  rounded py-1 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                   id="grid-first-name"
                   type="text"
                   placeholder=""
