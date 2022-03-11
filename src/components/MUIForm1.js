@@ -2,102 +2,80 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import MenuItem from "@mui/material/MenuItem";
+import Autocomplete from "@material-ui/lab/Autocomplete";
 
 const Sectors = [
   {
     value: "AGRICULTURE AND FORESTRY",
-    label: "AGRICULTURE AND FORESTRY",
   },
   {
     value: "BUSINESS SERVICES",
-    label: "BUSINESS SERVICES",
   },
   {
     value: "COMMERCE & FINANCE",
-    label: "COMMERCE & FINANCE",
   },
   {
     value: "COMMUNICATION",
-    label: "COMMUNICATION",
   },
   {
     value: "CONSTRUCTION",
-    label: "CONSTRUCTION",
   },
   {
     value: "MANUFACTURING",
-    label: "MANUFACTURING",
   },
   {
     value: "MARINE RESOURCES",
-    label: "MARINE RESOURCES",
   },
   {
     value: "MINING AND QUARRYING",
-    label: "MINING AND QUARRYING",
   },
   {
     value: "MISCELLANEOUS",
-    label: "MISCELLANEOUS",
   },
   {
     value: "OTHER SERVICES",
-    label: "OTHER SERVICES",
   },
   {
     value: "PERSONAL SERVICES",
-    label: "PERSONAL SERVICES",
   },
   {
     value: "PETROLEUM",
-    label: "PETROLEUM",
   },
   {
     value: "TRANSPORTATION AND STORAGE",
-    label: "TRANSPORTATION AND STORAGE",
   },
   {
     value: "UTILITY SERVICES",
-    label: "UTILITY SERVICES",
   },
 ];
 
 const subSector = [
   {
     value: "LEGAL SERVICES",
-    label: "LEGAL SERVICES",
   },
   {
     value: "ARCHITECTURAL DESIGN",
-    label: "ARCHITECTURAL DESIGN",
   },
   {
     value: "VEHICLE AND EQUIPMENT HIRE SERVICES",
-    label: "ARCHITECTURAL DESIGN",
   },
   {
     value: "AUDIT, TAXATION AND ACCOUNTANCY",
-    label: "AUDIT, TAXATION AND ACCOUNTANCY",
   },
   {
     value: "CAR DEALERSHIP",
-    label: "CAR DEALERSHIP",
   },
   {
     value: "DEBIT COLLECTIONS",
-    label: "DEBIT COLLECTIONS",
   },
   {
     value: "INSPECTIONS",
-    label: "INSPECTIONS",
   },
   {
     value: "QUANTITY SURVEYS",
-    label: "QUANTITY SURVEYS",
   },
   {
     value: "OTHER BUSINESS SERVICES",
-    label: "OTHER BUSINESS SERVICE",
   },
 ];
 
@@ -230,12 +208,26 @@ const YesNo = [
 const MUIForm = () => {
   const [currency, setCurrency] = React.useState("NONE");
   const [receiveStatement, setReceiveStatement] = React.useState("");
-  const [subSectors, setSubSectors] = React.useState("");
-  const [sectorSelet, setSectorSelet] = React.useState("");
+  const [subSectors, setSubSectors] = React.useState(subSector);
+  const [sectorSelet, setSectorSelet] = React.useState(Sectors);
   const [productGroups, setProductGroup] = React.useState("");
-  const [productSubGroups, setProductSubGroup] = React.useState("");
+  const [productSubGroups, setProductSubGroup] =
+    React.useState(productSubGroup);
   const [currencyHelpScreens, setCurrencyHelpScreens] = React.useState("");
   const [fxcurrencys, seFxcurrencys] = React.useState("");
+  const [data, setData] = React.useState([]);
+
+  React.useEffect(() => {
+    const getData = async () => {
+      const response = await fetch(
+        `https://swapi-deno.azurewebsites.net/api/starships`
+      );
+      const dataOptions = await response.json();
+
+      setData(dataOptions);
+    };
+    getData();
+  }, []);
 
   const handlefxcurrencys = (e) => {
     seFxcurrencys(e.target.value);
@@ -272,16 +264,23 @@ const MUIForm = () => {
   const productGroupHandle = (e) => {};
 
   return (
-    <div className="m-5 p-10">
+    <div className="m-28 p-28">
       <div class="p-4 w-full  bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700">
         <div className=" p-2 m-2">
           <div class="flex flex-wrap -mx-3 mb-6 pt-0">
             <div className="w-full md:w-1/2 mb-6 md:mb-0 p-5 ">
-              <TextField
-                id="filled-basic"
-                label="Customer ID"
-                variant="filled"
-                className="appearance-none block w-full  text-gray-700 border px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+              <Autocomplete
+                options={data}
+                renderInput={(params) => (
+                  <TextField
+                    id="filled-basic"
+                    {...params}
+                    label="Customer ID"
+                    variant="outlined"
+                    className="appearance-none block w-full  text-gray-700 border px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                  />
+                )}
+                getOptionLabel={(option) => `${option.name} `}
               />
             </div>
 
@@ -330,25 +329,20 @@ const MUIForm = () => {
             {/* End Select Field */}
 
             {/* Product Sub Group Field */}
-            <div class="w-full md:w-1/2  mb-6 md:mb-0 p-5">
-              <TextField
-                id="filled-select-currency"
-                select
-                label="Product Sub Group"
-                value={productSubGroups}
-                onChange={handleProductSubGroup}
-                variant="filled"
-                className="appearance-none block w-full  text-gray-700 border rounded px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-              >
-                {productSubGroup.map((eachProductSubGroup) => (
-                  <MenuItem
-                    key={eachProductSubGroup.value}
-                    value={eachProductSubGroup.value}
-                  >
-                    {eachProductSubGroup.label}
-                  </MenuItem>
-                ))}
-              </TextField>
+            <div className="w-full md:w-1/2 mb-6 md:mb-0 p-5 ">
+              <Autocomplete
+                options={productSubGroups}
+                renderInput={(params) => (
+                  <TextField
+                    id="filled-basic"
+                    {...params}
+                    label="Product Sub Group"
+                    variant="outlined"
+                    className="appearance-none block w-full  text-gray-700 border px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                  />
+                )}
+                getOptionLabel={(option) => `${option.value} `}
+              />
             </div>
             {/* End Select Field */}
 
@@ -395,14 +389,35 @@ const MUIForm = () => {
             </div>
             {/* End Select Field */}
 
-            <div class="w-full px-5 pt-5">
+            <div class="w-full md:w-1/2  mb-6 md:mb-0 p-5">
               <TextField
+                disabled
                 id="filled-basic"
-                label="Account Mandate"
+                label="Acount Mandate"
                 variant="filled"
                 className="appearance-none block w-full  text-gray-700 border rounded px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
               />
             </div>
+
+            {/* Select Field */}
+            <div class="w-full md:w-1/2  mb-6 md:mb-0 p-5">
+              <TextField
+                id="filled-select-currency"
+                select
+                label="Statement Required"
+                value={receiveStatement}
+                onChange={handleChangeStatement}
+                variant="filled"
+                className="appearance-none block w-full  text-gray-700 border rounded px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+              >
+                {YesNo.map((eachYesNo) => (
+                  <MenuItem key={eachYesNo.value} value={eachYesNo.value}>
+                    {eachYesNo.label}
+                  </MenuItem>
+                ))}
+              </TextField>
+            </div>
+            {/* End Select Field */}
           </div>
 
           {/* Arm Officer Cardd */}
@@ -471,45 +486,38 @@ const MUIForm = () => {
 
           <div class="flex flex-wrap -mx-3 mb-4  pb-1">
             {/* Sector Field */}
-            <div class="w-full md:w-1/2  mb-6 md:mb-0 p-5">
-              <TextField
-                id="filled-select-currency"
-                select
-                label="Sector"
-                value={sectorSelet}
-                onChange={handleSectorSelect}
-                variant="filled"
-                className="appearance-none block w-full  text-gray-700 border rounded px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-              >
-                {Sectors.map((eachSector) => (
-                  <MenuItem key={eachSector.value} value={eachSector.value}>
-                    {eachSector.label}
-                  </MenuItem>
-                ))}
-              </TextField>
+            <div className="w-full md:w-1/2 mb-6 md:mb-0 p-5 ">
+              <Autocomplete
+                options={sectorSelet}
+                renderInput={(params) => (
+                  <TextField
+                    id="filled-basic"
+                    {...params}
+                    label="Sector"
+                    variant="outlined"
+                    className="appearance-none block w-full  text-gray-700 border px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                  />
+                )}
+                getOptionLabel={(option) => `${option.value} `}
+              />
             </div>
             {/* End Select Field */}
 
             {/* Sub Sector Field */}
-            <div class="w-full md:w-1/2  mb-6 md:mb-0 p-5">
-              <TextField
-                id="filled-select-currency"
-                select
-                label="Sub Sector"
-                value={subSectors}
-                onChange={handlesubSector}
-                variant="filled"
-                className="appearance-none block w-full  text-gray-700 border rounded px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-              >
-                {subSector.map((eachsubSector) => (
-                  <MenuItem
-                    key={eachsubSector.value}
-                    value={eachsubSector.value}
-                  >
-                    {eachsubSector.label}
-                  </MenuItem>
-                ))}
-              </TextField>
+            <div className="w-full md:w-1/2 mb-6 md:mb-0 p-5 ">
+              <Autocomplete
+                options={subSectors}
+                renderInput={(params) => (
+                  <TextField
+                    id="filled-basic"
+                    {...params}
+                    label="Sub Sector"
+                    variant="outlined"
+                    className="appearance-none block w-full  text-gray-700 border px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                  />
+                )}
+                getOptionLabel={(option) => `${option.value} `}
+              />
             </div>
             {/* End Select Field */}
 
@@ -545,26 +553,6 @@ const MUIForm = () => {
                 className="appearance-none block w-full  text-gray-700 border rounded px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
               />
             </div>
-
-            {/* Select Field */}
-            <div class="w-full md:w-1/2  mb-6 md:mb-0 p-5">
-              <TextField
-                id="filled-select-currency"
-                select
-                label="Statement Required"
-                value={receiveStatement}
-                onChange={handleChangeStatement}
-                variant="filled"
-                className="appearance-none block w-full  text-gray-700 border rounded px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-              >
-                {YesNo.map((eachYesNo) => (
-                  <MenuItem key={eachYesNo.value} value={eachYesNo.value}>
-                    {eachYesNo.label}
-                  </MenuItem>
-                ))}
-              </TextField>
-            </div>
-            {/* End Select Field */}
           </div>
         </div>
       </div>
