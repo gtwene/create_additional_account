@@ -41,6 +41,27 @@ export default function X100_MUIForm2() {
             <TextField
               className="appearance-none block w-full  text-gray-700 border rounded py-3 px-2 mb-3 leading-tight focus:outline-none focus:bg-white "
               id="filled-basic"
+              label="Customer ID"
+              variant="filled"
+            />
+          </div>
+
+          <div class="w-full ">
+            <TextField
+              disabled
+              className="appearance-none block w-full  text-gray-700 border rounded py-3 px-2 mb-3 leading-tight focus:outline-none focus:bg-white "
+              id="filled-basic"
+              label="Source Branch"
+              variant="filled"
+            />
+          </div>
+        </div>
+        {/* Second */}
+        <div class="p-4 w-full text-center bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+          <div class="w-full ">
+            <TextField
+              className="appearance-none block w-full  text-gray-700 border rounded py-3 px-2 mb-3 leading-tight focus:outline-none focus:bg-white "
+              id="filled-basic"
               label="Account Name"
               variant="filled"
             />
@@ -55,8 +76,6 @@ export default function X100_MUIForm2() {
             />
           </div>
         </div>
-        {/* Second */}
-        <div class="p-4 w-full text-center bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700"></div>
       </div>
 
       {/* Division 1 */}
@@ -82,7 +101,25 @@ export default function X100_MUIForm2() {
           </div>
         </div>
         {/* Second */}
-        <div class="p-4 w-full text-center bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700"></div>
+        <div class="p-4 w-full text-center bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+          <div class="w-full ">
+            <TextField
+              className="appearance-none block w-full  text-gray-700 border rounded py-3 px-2 mb-3 leading-tight focus:outline-none focus:bg-white "
+              id="filled-basic"
+              label="Account Name"
+              variant="filled"
+            />
+          </div>
+
+          <div class="w-full ">
+            <TextField
+              className="appearance-none block w-full  text-gray-700 border rounded py-3 px-2 mb-3 leading-tight focus:outline-none focus:bg-white "
+              id="filled-basic"
+              label="Account Name"
+              variant="filled"
+            />
+          </div>
+        </div>
       </div>
 
       {/* Division 2 */}
@@ -108,7 +145,25 @@ export default function X100_MUIForm2() {
           </div>
         </div>
         {/* Second */}
-        <div class="p-4 w-full text-center bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700"></div>
+        <div class="p-4 w-full text-center bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+          <div class="w-full ">
+            <TextField
+              className="appearance-none block w-full  text-gray-700 border rounded py-3 px-2 mb-3 leading-tight focus:outline-none focus:bg-white "
+              id="filled-basic"
+              label="Account Name"
+              variant="filled"
+            />
+          </div>
+
+          <div class="w-full ">
+            <TextField
+              className="appearance-none block w-full  text-gray-700 border rounded py-3 px-2 mb-3 leading-tight focus:outline-none focus:bg-white "
+              id="filled-basic"
+              label="Account Name"
+              variant="filled"
+            />
+          </div>
+        </div>
       </div>
 
       {/* Third */}

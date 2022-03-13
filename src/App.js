@@ -1,6 +1,6 @@
 import Body from "./components/Body";
 import Header from "./components/Header";
-import ImpressOrigination from "./components/ImpressOrigination";
+import X100Form3 from "./components/X100Form3";
 import ImpressRequest from "./components/ImpressRequest";
 import Modal_Element from "./components/Modal";
 import Modal from "./components/Modal";
@@ -20,13 +20,13 @@ function App() {
       {/* <NextForms /> */}
       {/* <FormsMUI /> */}
       {/* <FormUI /> */}
-      <X100Form1 />
-      {/* <X100_MUIForm2 /> */}
+      {/* <X100Form1 /> */}
+      <X100_MUIForm2 />
       {/* <Modal_Element /> */}
-      {/* <ImpressOrigination />   */}
+      {/* <X100Form3 />   */}
       {/* <ImpressRequest /> */}
       {/* <Header /> */}
-      <div className="">{/* <Body /> */}</div>
+      {/* <div className=""><Body /></div> */}
       <div className=""></div>
     </div>
   );
