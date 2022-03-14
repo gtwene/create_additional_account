@@ -62,7 +62,7 @@ export default function X100_MUIForm2() {
             <TextField
               className="appearance-none block w-full  text-gray-700 border rounded py-3 px-2 mb-3 leading-tight focus:outline-none focus:bg-white "
               id="filled-basic"
-              label="Account Name"
+              label="Product Group"
               variant="filled"
             />
           </div>
@@ -71,7 +71,7 @@ export default function X100_MUIForm2() {
             <TextField
               className="appearance-none block w-full  text-gray-700 border rounded py-3 px-2 mb-3 leading-tight focus:outline-none focus:bg-white "
               id="filled-basic"
-              label="Account Name"
+              label="Product Sub Group"
               variant="filled"
             />
           </div>
@@ -95,7 +95,7 @@ export default function X100_MUIForm2() {
             <TextField
               className="appearance-none block w-full  text-gray-700 border rounded py-3 px-2 mb-3 leading-tight focus:outline-none focus:bg-white "
               id="filled-basic"
-              label="Account Name"
+              label="Currency"
               variant="filled"
             />
           </div>
@@ -106,7 +106,7 @@ export default function X100_MUIForm2() {
             <TextField
               className="appearance-none block w-full  text-gray-700 border rounded py-3 px-2 mb-3 leading-tight focus:outline-none focus:bg-white "
               id="filled-basic"
-              label="Account Name"
+              label="Account Mandate"
               variant="filled"
             />
           </div>
@@ -115,7 +115,7 @@ export default function X100_MUIForm2() {
             <TextField
               className="appearance-none block w-full  text-gray-700 border rounded py-3 px-2 mb-3 leading-tight focus:outline-none focus:bg-white "
               id="filled-basic"
-              label="Account Name"
+              label="Fx Category"
               variant="filled"
             />
           </div>
@@ -130,16 +130,40 @@ export default function X100_MUIForm2() {
             <TextField
               className="appearance-none block w-full  text-gray-700 border rounded py-3 px-2 mb-3 leading-tight focus:outline-none focus:bg-white "
               id="filled-basic"
-              label="Account Name"
+              label="Arm Officer"
               variant="filled"
+              size="small"
             />
           </div>
 
           <div class="w-full ">
             <TextField
+              disabled
+              className="appearance-none bg-gray-400 block w-full  text-gray-700 border rounded py-3 px-2 mb-3 leading-tight focus:outline-none focus:bg-white "
+              id="filled-basic"
+              label=""
+              variant="filled"
+            />
+          </div>
+        </div>
+
+        <div class="p-4 w-full text-center bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+          <div class="w-full ">
+            <TextField
               className="appearance-none block w-full  text-gray-700 border rounded py-3 px-2 mb-3 leading-tight focus:outline-none focus:bg-white "
               id="filled-basic"
-              label="Account Name"
+              label="Customer Segment"
+              variant="filled"
+              size="small"
+            />
+          </div>
+
+          <div class="w-full ">
+            <TextField
+              disabled
+              className="appearance-none bg-gray-400 block w-full  text-gray-700 border rounded py-3 px-2 mb-3 leading-tight focus:outline-none focus:bg-white "
+              id="filled-basic"
+              label=""
               variant="filled"
             />
           </div>
@@ -150,24 +174,85 @@ export default function X100_MUIForm2() {
             <TextField
               className="appearance-none block w-full  text-gray-700 border rounded py-3 px-2 mb-3 leading-tight focus:outline-none focus:bg-white "
               id="filled-basic"
-              label="Account Name"
+              label="Customer Sub Segment"
               variant="filled"
+              size="small"
             />
           </div>
 
           <div class="w-full ">
             <TextField
-              className="appearance-none block w-full  text-gray-700 border rounded py-3 px-2 mb-3 leading-tight focus:outline-none focus:bg-white "
+              disabled
+              className="appearance-none bg-gray-400 block w-full  text-gray-700 border rounded py-3 px-2 mb-3 leading-tight focus:outline-none focus:bg-white "
               id="filled-basic"
-              label="Account Name"
+              label=""
               variant="filled"
             />
           </div>
         </div>
       </div>
 
+      <div class="sm:flex md:flex ">
+        <div class="p-4 w-full text-center bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+          <div class="w-full ">
+            <TextField
+              className="appearance-none block w-full  text-gray-700 border rounded py-3 px-2 mb-3 leading-tight focus:outline-none focus:bg-white "
+              id="filled-basic"
+              label="Sector"
+              variant="filled"
+              size="small"
+            />
+          </div>
+        </div>
+        <div class="p-4 w-full text-center bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+          <div class="w-full ">
+            <TextField
+              className="appearance-none block w-full  text-gray-700 border rounded py-3 px-2 mb-3 leading-tight focus:outline-none focus:bg-white "
+              id="filled-basic"
+              label="Sub Sector"
+              variant="filled"
+              size="small"
+            />
+          </div>
+        </div>
+      </div>
+
       {/* Third */}
-      <div class="p-4 w-full text-center bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700"></div>
+      <div class="sm:flex md:flex ">
+        <div class="p-4 w-full text-center bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+          <div class="w-full ">
+            <TextField
+              className="appearance-none block w-full  text-gray-700 border rounded py-3 px-2 mb-3 leading-tight focus:outline-none focus:bg-white "
+              id="filled-basic"
+              label="Freq. Of Statment"
+              variant="filled"
+              size="small"
+            />
+          </div>
+        </div>
+        <div class="p-4 w-full text-center bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+          <div class="w-full ">
+            <TextField
+              className="appearance-none block w-full  text-gray-700 border rounded py-3 px-2 mb-3 leading-tight focus:outline-none focus:bg-white "
+              id="filled-basic"
+              label="Start Date"
+              variant="filled"
+              size="small"
+            />
+          </div>
+        </div>
+        <div class="p-4 w-full text-center bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+          <div class="w-full ">
+            <TextField
+              className="appearance-none block w-full  text-gray-700 border rounded py-3 px-2 mb-3 leading-tight focus:outline-none focus:bg-white "
+              id="filled-basic"
+              label="Statement Required"
+              variant="filled"
+              size="small"
+            />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
