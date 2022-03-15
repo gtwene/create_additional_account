@@ -8,16 +8,22 @@ import { Autocomplete } from "@material-ui/lab";
 import InputIcon from "@material-tailwind/react/InputIcon";
 import { TextField } from "@material-ui/core";
 
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
-  ...theme.typography.body2,
-  padding: theme.spacing(1),
-  textAlign: "center",
-  color: theme.palette.text.secondary,
-}));
-
 export default function X100_MUIForm2() {
   const [data, setData] = useState([]);
+  const [dataSet, setDataSet] = useState([]);
+
+  useEffect(() => {
+    const getdataSet = async () => {
+      const response = await fetch(
+        `https://www.7timer.info/bin/astro.php?lon=113.2&lat=23.1&ac=0&unit=metric&output=json&tzshift=0`
+      );
+      const dataTime = await response.json();
+
+      console.log(dataTime.dataseries);
+    };
+
+    getdataSet();
+  }, []);
 
   useEffect(() => {
     const getData = async () => {
@@ -38,11 +44,18 @@ export default function X100_MUIForm2() {
         {/* First */}
         <div class="p-4 w-full text-center bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700">
           <div class="w-full ">
-            <TextField
-              className="appearance-none block w-full  text-gray-700 border rounded py-3 px-2 mb-3 leading-tight focus:outline-none focus:bg-white "
-              id="filled-basic"
-              label="Customer ID"
-              variant="filled"
+            <Autocomplete
+              options={data}
+              renderInput={(params) => (
+                <TextField
+                  {...params}
+                  className="appearance-none block w-full  text-gray-700 border rounded py-3 px-2 mb-3 leading-tight focus:outline-none focus:bg-white "
+                  id="filled-basic"
+                  label="Customer ID"
+                  variant="standard"
+                />
+              )}
+              getOptionLabel={(option) => `${option.name}`}
             />
           </div>
 
@@ -52,7 +65,7 @@ export default function X100_MUIForm2() {
               className="appearance-none block w-full  text-gray-700 border rounded py-3 px-2 mb-3 leading-tight focus:outline-none focus:bg-white "
               id="filled-basic"
               label="Source Branch"
-              variant="filled"
+              variant="standard"
             />
           </div>
         </div>
@@ -63,7 +76,7 @@ export default function X100_MUIForm2() {
               className="appearance-none block w-full  text-gray-700 border rounded py-3 px-2 mb-3 leading-tight focus:outline-none focus:bg-white "
               id="filled-basic"
               label="Product Group"
-              variant="filled"
+              variant="standard"
             />
           </div>
 
@@ -72,7 +85,7 @@ export default function X100_MUIForm2() {
               className="appearance-none block w-full  text-gray-700 border rounded py-3 px-2 mb-3 leading-tight focus:outline-none focus:bg-white "
               id="filled-basic"
               label="Product Sub Group"
-              variant="filled"
+              variant="standard"
             />
           </div>
         </div>
@@ -87,7 +100,7 @@ export default function X100_MUIForm2() {
               className="appearance-none block w-full  text-gray-700 border rounded py-3 px-2 mb-3 leading-tight focus:outline-none focus:bg-white "
               id="filled-basic"
               label="Account Name"
-              variant="filled"
+              variant="standard"
             />
           </div>
 
@@ -96,7 +109,7 @@ export default function X100_MUIForm2() {
               className="appearance-none block w-full  text-gray-700 border rounded py-3 px-2 mb-3 leading-tight focus:outline-none focus:bg-white "
               id="filled-basic"
               label="Currency"
-              variant="filled"
+              variant="standard"
             />
           </div>
         </div>
@@ -107,7 +120,7 @@ export default function X100_MUIForm2() {
               className="appearance-none block w-full  text-gray-700 border rounded py-3 px-2 mb-3 leading-tight focus:outline-none focus:bg-white "
               id="filled-basic"
               label="Account Mandate"
-              variant="filled"
+              variant="standard"
             />
           </div>
 
@@ -116,7 +129,7 @@ export default function X100_MUIForm2() {
               className="appearance-none block w-full  text-gray-700 border rounded py-3 px-2 mb-3 leading-tight focus:outline-none focus:bg-white "
               id="filled-basic"
               label="Fx Category"
-              variant="filled"
+              variant="standard"
             />
           </div>
         </div>
@@ -125,13 +138,13 @@ export default function X100_MUIForm2() {
       {/* Division 2 */}
       <div class="sm:flex md:flex ">
         {/* First */}
-        <div class="p-4 w-full text-center bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+        <div class="p-4 space-y-1 w-full text-center bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700">
           <div class="w-full ">
             <TextField
               className="appearance-none block w-full  text-gray-700 border rounded py-3 px-2 mb-3 leading-tight focus:outline-none focus:bg-white "
               id="filled-basic"
               label="Arm Officer"
-              variant="filled"
+              variant="standard"
               size="small"
             />
           </div>
@@ -147,13 +160,13 @@ export default function X100_MUIForm2() {
           </div>
         </div>
 
-        <div class="p-4 w-full text-center bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+        <div class="p-4 space-y-1 w-full text-center bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700">
           <div class="w-full ">
             <TextField
               className="appearance-none block w-full  text-gray-700 border rounded py-3 px-2 mb-3 leading-tight focus:outline-none focus:bg-white "
               id="filled-basic"
               label="Customer Segment"
-              variant="filled"
+              variant="standard"
               size="small"
             />
           </div>
@@ -169,13 +182,13 @@ export default function X100_MUIForm2() {
           </div>
         </div>
         {/* Second */}
-        <div class="p-4 w-full text-center bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+        <div class="p-4 space-y-1 w-full text-center bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700">
           <div class="w-full ">
             <TextField
               className="appearance-none block w-full  text-gray-700 border rounded py-3 px-2 mb-3 leading-tight focus:outline-none focus:bg-white "
               id="filled-basic"
               label="Customer Sub Segment"
-              variant="filled"
+              variant="standard"
               size="small"
             />
           </div>
@@ -199,7 +212,7 @@ export default function X100_MUIForm2() {
               className="appearance-none block w-full  text-gray-700 border rounded py-3 px-2 mb-3 leading-tight focus:outline-none focus:bg-white "
               id="filled-basic"
               label="Sector"
-              variant="filled"
+              variant="standard"
               size="small"
             />
           </div>
@@ -210,7 +223,7 @@ export default function X100_MUIForm2() {
               className="appearance-none block w-full  text-gray-700 border rounded py-3 px-2 mb-3 leading-tight focus:outline-none focus:bg-white "
               id="filled-basic"
               label="Sub Sector"
-              variant="filled"
+              variant="standard"
               size="small"
             />
           </div>
@@ -225,7 +238,7 @@ export default function X100_MUIForm2() {
               className="appearance-none block w-full  text-gray-700 border rounded py-3 px-2 mb-3 leading-tight focus:outline-none focus:bg-white "
               id="filled-basic"
               label="Freq. Of Statment"
-              variant="filled"
+              variant="standard"
               size="small"
             />
           </div>
@@ -236,7 +249,9 @@ export default function X100_MUIForm2() {
               className="appearance-none block w-full  text-gray-700 border rounded py-3 px-2 mb-3 leading-tight focus:outline-none focus:bg-white "
               id="filled-basic"
               label="Start Date"
-              variant="filled"
+              type="date"
+              defaultValue="2020-05-26"
+              variant="standard"
               size="small"
             />
           </div>
@@ -247,7 +262,7 @@ export default function X100_MUIForm2() {
               className="appearance-none block w-full  text-gray-700 border rounded py-3 px-2 mb-3 leading-tight focus:outline-none focus:bg-white "
               id="filled-basic"
               label="Statement Required"
-              variant="filled"
+              variant="standard"
               size="small"
             />
           </div>
