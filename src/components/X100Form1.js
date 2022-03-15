@@ -288,7 +288,7 @@ const X100Form1 = () => {
               id="filled-basic"
               label="Source Branch"
               variant="filled"
-              className="appearance-none bg-gray-400 block w-full  text-gray-700 border rounded px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+              className="appearance-none bg-gray-100 block w-full  text-gray-700 border rounded px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
             />
           </div>
 
@@ -392,7 +392,7 @@ const X100Form1 = () => {
 
           <div class="w-full md:w-1/2  mb-6 md:mb-0 p-2">
             <TextField
-              disabled
+              
               id="filled-basic"
               label="Acount Mandate"
               size="small"
@@ -425,67 +425,74 @@ const X100Form1 = () => {
 
         {/* Arm Officer Cardd */}
         <div class="p-0 w-full  bg-white rounded-lg border shadow-md sm:p-0 dark:bg-gray-800 dark:border-gray-700">
-          <div class="flex flex-wrap -mx-3 pt-0">
-            <div className="w-full md:w-1/2 mb-6 md:mb-0 p-5 ">
-              <TextField
-                label="Arm Officer"
-                id="outlined-size-small"
-                size="small"
-                variant="filled"
-                className="appearance-none block w-full  text-gray-700 border px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-              />
-            </div>
-
-            <div class=" w-full md:w-1/2  mb-6 md:mb-0 p-5">
-              <TextField
-                disabled
-                id="outlined-size-small"
-                size="small"
-                variant="filled"
-                className="appearance-none bg-gray-400 block w-full  text-gray-700 border px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-              />
-            </div>
-
-            <div className="w-full md:w-1/2 mb-6 md:mb-0 p-5 ">
-              <TextField
-                label="Customer Segment"
-                id="outlined-size-small"
-                size="small"
-                variant="filled"
-                className="appearance-none block w-full  text-gray-700 border px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-              />
-            </div>
-
-            <div class="w-full md:w-1/2  mb-6 md:mb-0 p-5">
-              <TextField
-                disabled
-                id="outlined-size-small"
-                size="small"
-                variant="filled"
-                className="appearance-none bg-gray-400 block w-full  text-gray-700 border px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-              />
-            </div>
-
-            <div className="w-full md:w-1/2 mb-6 md:mb-0 p-5 ">
-              <TextField
-                label="Cust. Sub Segment"
-                id="outlined-size-small"
-                size="small"
-                variant="filled"
-                className="appearance-none block w-full  text-gray-700 border px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-              />
-            </div>
-
-            <div class="w-full md:w-1/2  mb-6 md:mb-0 p-5">
-              <TextField
-                disabled
-                id="outlined-size-small"
-                size="small"
-                variant="filled"
-                className="appearance-none bg-gray-400 block w-full  text-gray-700 border px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-              />
-            </div>
+        <div class="sm:flex md:flex ">
+        {/* First */}
+        <div class="p-4 space-y-1 w-full text-center bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+          <div class="w-full ">
+            <TextField
+              className="appearance-none block w-full  text-gray-700 border rounded py-3 px-2 mb-3 leading-tight focus:outline-none focus:bg-white "
+              id="filled-basic"
+              label="Arm Officer"
+              variant="standard"
+              size="small"
+            />
           </div>
+
+          <div class="w-full ">
+            <TextField
+              disabled
+              className="appearance-none bg-gray-400 block w-full  text-gray-700 border rounded py-3 px-2 mb-3 leading-tight focus:outline-none focus:bg-white "
+              id="filled-basic"
+              label=""
+              variant="filled"
+            />
+          </div>
+        </div>
+
+        <div class="p-4 space-y-1 w-full text-center bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+          <div class="w-full ">
+            <TextField
+              className="appearance-none block w-full  text-gray-700 border rounded py-3 px-2 mb-3 leading-tight focus:outline-none focus:bg-white "
+              id="filled-basic"
+              label="Customer Segment"
+              variant="standard"
+              size="small"
+            />
+          </div>
+
+          <div class="w-full ">
+            <TextField
+              disabled
+              className="appearance-none bg-gray-400 block w-full  text-gray-700 border rounded py-3 px-2 mb-3 leading-tight focus:outline-none focus:bg-white "
+              id="filled-basic"
+              label=""
+              variant="filled"
+            />
+          </div>
+        </div>
+        {/* Second */}
+        <div class="p-4 space-y-1 w-full text-center bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+          <div class="w-full ">
+            <TextField
+              className="appearance-none block w-full  text-gray-700 border rounded py-3 px-2 mb-3 leading-tight focus:outline-none focus:bg-white "
+              id="filled-basic"
+              label="Customer Sub Segment"
+              variant="standard"
+              size="small"
+            />
+          </div>
+
+          <div class="w-full ">
+            <TextField
+              disabled
+              className="appearance-none bg-gray-400 block w-full  text-gray-700 border rounded py-3 px-2 mb-3 leading-tight focus:outline-none focus:bg-white "
+              id="filled-basic"
+              label=""
+              variant="filled"
+            />
+          </div>
+        </div>
+      </div>
         </div>
 
         {/* Arm oofficer end */}

@@ -12,6 +12,8 @@ import CardForm from "./components/CardForm";
 import X100_MUIForm1 from "./components/X100Form1";
 import X100Form1 from "./components/X100Form1";
 import X100_MUIForm2 from "./components/X100_MUIForm2";
+import TableEditablePage from "./components/Table";
+
 
 function App() {
   return (
@@ -20,12 +22,14 @@ function App() {
       {/* <NextForms /> */}
       {/* <FormsMUI /> */}
       {/* <FormUI /> */}
-      {/* <X100Form1 /> */}
-      <X100_MUIForm2 />
+      <X100Form1 />
+      {/* <X100_MUIForm2 /> */}
       {/* <Modal_Element /> */}
       {/* <X100Form3 />   */}
       {/* <ImpressRequest /> */}
       {/* <Header /> */}
+    {/* <Tableantd/> */}
+    {/* <TableEditablePage /> */}
       {/* <div className=""><Body /></div> */}
       <div className=""></div>
     </div>
